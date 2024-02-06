@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Name - Portfolio</title>
+  <style>
+    body, h1, h2, p {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Arial', sans-serif;
+      line-height: 1.6;
+      background-color: #f9f9f9; /* Light background color */
+      color: #333; /* Main text color */
+    }
+
+    nav {
+      background-color: #333;
+      color: white;
+      padding: 1em;
+      text-align: center;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 1em;
+      font-size: 1.2em;
+      transition: color 0.3s ease-in-out;
+    }
+
+    nav a:hover {
+      color: #ff7f50; /* Orange hover color */
+    }
+
+    header {
+      background-image: url('background-image.jpg');
+      background-attachment: fixed;
+      background-size: cover;
+      color: white;
+      text-align: center;
+      padding: 8em 0;
+    }
+
+    header h1 {
+      font-size: 3em;
+      margin-bottom: 0.5em;
+    }
+
+    #about {
+      background-color: #fff; /* White background color */
+      padding: 4em 0;
+      text-align: center;
+    }
+
+    #about h2 {
+      font-size: 2.5em;
+      margin-bottom: 1em;
+      color: #333; /* Dark text color */
+    }
+
+    #about p {
+      font-size: 1.2em;
+      margin-bottom: 2em;
+    }
+
+    #portfolio {
+      padding: 4em 0;
+      text-align: center;
+    }
+
+    #portfolio h2 {
+      font-size: 2.5em;
+      margin-bottom: 2em;
+      color: #333; /* Dark text color */
+    }
+
+    /* Portfolio item styles with fade-in animation */
+    #portfolio div {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+
+    #portfolio div:hover {
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    #portfolio div.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    #contact {
+      background-color: #333;
+      color: white;
+      padding: 4em 0;
+      text-align: center;
+    }
+
+    #contact h2 {
+      font-size: 2.5em;
+      margin-bottom: 2em;
+    }
+
+    footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 1em 0;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav>
+    <a href="#about">About</a>
+    <a href="#portfolio">Portfolio</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <!-- Header -->
+  <header>
+    <h1>Your Name</h1>
+    <p>Web Developer</p>
+  </header>
+
+  <!-- About Section -->
+  <section id="about">
+    <h2>About Me</h2>
+    <p>Your introduction and a brief description about yourself.</p>
+  </section>
+
+  <!-- Portfolio Section -->
+  <section id="portfolio">
+    <h2>Portfolio</h2>
+    <!-- Add your portfolio items here -->
+    <!-- Example: -->
+    <div>
+      <img src="project1.jpg" alt="Project 1">
+      <h3>Project 1</h3>
+      <p>Description of project 1.</p>
+    </div>
+
+    <div>
+      <img src="project2.jpg" alt="Project 2">
+      <h3>Project 2</h3>
+      <p>Description of project 2.</p>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <h2>Contact Me</h2>
+    <p>Email: your.email@example.com</p>
+    <p>Phone: (123) 456-7890</p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2024 Your Name. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Add fade-in animation to portfolio items on scroll
+    window.addEventListener('scroll', () => {
+      const portfolioItems = document.querySelectorAll('#portfolio div');
+      portfolioItems.forEach(item => {
+        const itemTop = item.getBoundingClientRect().top;
+        if (itemTop < window.innerHeight - 100) {
+          item.classList.add('show');
+        }
+      });
+    });
+  </script>
+</body>
+</html>
